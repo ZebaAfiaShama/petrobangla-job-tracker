@@ -90,6 +90,9 @@
       <button onclick="switchTab('tracker')" id="tab-tracker" class="tab-btn px-3.5 py-3 border-b-2 border-blue-500 text-blue-400 font-semibold flex items-center gap-1.5 whitespace-nowrap">
         <span>🗓️</span> Applications & Deadlines
       </button>
+      <button onclick="switchTab('syllabus')" id="tab-syllabus" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>🎯</span> Master Syllabus & Tracker
+      </button>
       <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
         <span>📖</span> 2024 BUET Questions (40 Solved)
       </button>
@@ -99,11 +102,8 @@
       <button onclick="switchTab('patterns')" id="tab-patterns" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
         <span>⚖️</span> BUET vs. IBA Pattern
       </button>
-      <button onclick="switchTab('syllabus')" id="tab-syllabus" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
-        <span>🎯</span> Syllabus & Habit Tracker
-      </button>
       <button onclick="switchTab('books')" id="tab-books" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
-        <span>📚</span> Books & Free Online Hub
+        <span>📚</span> Books & Online Hub
       </button>
     </nav>
 
@@ -268,7 +268,272 @@
 
     </section>
 
-    <!-- ==================== TAB 2: 2024 BUET QUESTION BANK (40 SOLVED) ==================== -->
+    <!-- ==================== TAB 2: MASTER SYLLABUS & TRACKER (EXPANDED) ==================== -->
+    <section id="pane-syllabus" class="space-y-6 hidden">
+      <!-- Progress Bar Card -->
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge-tag bg-blue-500/20 text-blue-400">Master Checklist</span>
+              <span class="badge-tag bg-emerald-500/20 text-emerald-400">Updated with Ahmad Shakil's Complete Guide</span>
+            </div>
+            <h2 class="text-xl font-bold text-white">Comprehensive Preparation & Habit Tracker</h2>
+            <p class="text-xs text-slate-400">Click any topic to mark it complete. Your progress is dynamically calculated and saved in localStorage.</p>
+          </div>
+          <div class="text-right">
+            <span class="text-3xl font-black text-blue-400" id="study-progress-percent">0%</span>
+            <span class="text-xs text-slate-400 block" id="study-progress-count">0 of 0 topics done</span>
+          </div>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+          <div id="study-progress-bar" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Syllabus Sections Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+
+        <!-- 1. CSE Core Technical (Weight 60%) -->
+        <div class="bg-[#0f172a] border border-blue-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>💻</span> Part A: Core CSE (BUET Written & MCQ)
+            </h3>
+            <span class="badge-tag bg-blue-500/10 text-blue-400">Weight: 60%</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>SQL Queries: Joins, Nested Subqueries, GROUP BY, HAVING, Aggregate Functions</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>DBMS Normalization: 1NF, 2NF, 3NF, BCNF & Lossless Decomposition</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Computer Networks: OSI 7 Layers & TCP/IP 4 Layers breakdown</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Networking: IP Subnetting, CIDR prefix, VLSM host range calculations</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OS: CPU Scheduling (Round Robin, SJF, FCFS) Turnaround & Waiting Time</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OS: 4 Deadlock Conditions & Banker's Algorithm avoidance</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Algorithms: Dijkstra's Shortest Path, BFS, DFS, QuickSort, and Big-O</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OOP: Inheritance, Polymorphism, Abstraction, Encapsulation, Virtual Functions</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 2. English (Ahmad Shakil Guide) -->
+        <div class="bg-[#0f172a] border border-blue-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>🇬🇧</span> Part B: English Language & Grammar
+            </h3>
+            <span class="badge-tag bg-blue-500/10 text-blue-400">High Return</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Subject-Verb Agreement (as well as, along with, neither-nor, collective nouns)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Dangling Modifiers, Parallelism & Logical Comparison (IBA core)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Inversion of Adverbs (Seldom, Hardly, Scarcely) & Causative Verbs (Have, Get, Make)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Gerund, Infinitive, Participle & Modal Verbs</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Appropriate Prepositions (susceptible to, adhere to, refrain from)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Analogy & One-word Substitution (Master / IBA Job Previous Questions)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Vocabulary: Barron's GRE 333 / Word Smart I / GRE Antonyms PDF</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 3. Math (Ahmad Shakil Guide) -->
+        <div class="bg-[#0f172a] border border-amber-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>📐</span> Part C: Quantitative Aptitude (Math)
+            </h3>
+            <span class="badge-tag bg-amber-500/10 text-amber-400">Rank Decider</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Percentage, Profit & Loss, Ratio & Proportion</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Time & Distance (Train problems, Boat & Stream)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Work-related Problems (Pipe & Cistern, Man-days)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Number System, Inequality & Age Problems</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Mixture, Alligation & Partnership</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Permutation, Combination & Probability (HSC Onnorokom Pathshala level)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Geometry & Solid Geometry (ঘনজ্যামিতি, Arc length, Angles, Area integration)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 4. Bangla (Ahmad Shakil Guide) -->
+        <div class="bg-[#0f172a] border border-emerald-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>🇧🇩</span> Part D: বাংলা ব্যাকরণ, বিরচন ও সাহিত্য
+            </h3>
+            <span class="badge-tag bg-emerald-500/10 text-emerald-400">Class 9-10 Level</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>ধ্বনি, ধ্বনি পরিবর্তন, সন্ধি ও শুদ্ধ বানান</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>সমাস (বহুব্রীহি, তৎপুরুষ, কর্মধারয়, দ্বিগু), উপসর্গ (তৎসম/বাংলা) ও ধাতু</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>প্রকৃতি-প্রত্যয় এবং কারক ও বিভক্তি</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>বিরচন: সমার্থক/বিপরীত শব্দ, পারিভাষিক শব্দ, এক কথায় প্রকাশ ও বাগধারা</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>চর্যাপদ, মঙ্গলকাব্য ও মধ্যযুগের সাহিত্যকর্মের বিগত বছরের প্রশ্ন</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-emerald-600 focus:ring-0">
+              <span>শীর্ষ সাহিত্যিক: রবীন্দ্রনাথ, নজরুল, জসীমউদ্দীন, বিদ্যাসাগর, জীবনানন্দ, শরৎচন্দ্র, বঙ্কিম, শামসুর রাহমান, মাইকেল</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 5. General Knowledge & Energy Sector -->
+        <div class="bg-[#0f172a] border border-purple-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>⚡</span> Part E: General Knowledge & Energy Sector
+            </h3>
+            <span class="badge-tag bg-purple-500/10 text-purple-300">Petrobangla Focus</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>বাংলাদেশের জ্বালানি খাত: ২৯টি গ্যাসক্ষেত্র, এলএনজি টার্মিনাল (মহেশখালী/মাতারবাড়ী)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>পেট্রোবাংলার ১৩টি অধীনস্থ কোম্পানি (BAPEX, TGTDCL, SGFL, GTCL, BCMCL, ইত্যাদি)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>মুক্তিযুদ্ধ ও ভাষা আন্দোলন, বীরশ্রেষ্ঠ ও খেতাবপ্রাপ্ত (Ouderland)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>বাংলাদেশ সংবিধানের গুরুত্বপূর্ণ অনুচ্ছেদ ও জাতীয় উন্নয়ন মেগা প্রকল্প</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>আন্তর্জাতিক সংস্থা ও সম্মেলন (BRICS, NATO, OIC, জলবায়ু সম্মেলন)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>আন্তর্জাতিক ভূ-রাজনীতি: প্রণালি, যুদ্ধ-সংঘাত ও সীমানা (Sea of Azov, ইত্যাদি)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-purple-600 focus:ring-0">
+              <span>পরীক্ষার আগের ৪-৫ মাসের সাম্প্রতিক তথ্য (Current Affairs / Recent Hour)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 6. ICT Fundamentals -->
+        <div class="bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="font-bold text-white text-sm flex items-center gap-1.5">
+              <span>🖥️</span> Part F: ICT & Computer Fundamentals
+            </h3>
+            <span class="badge-tag bg-cyan-500/10 text-cyan-300">Guaranteed 100% (CSE)</span>
+          </div>
+          <div class="space-y-2 text-slate-300">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>CPU Architecture: ALU, CU, Register, Cache, and Bus</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>Memory hierarchy: RAM, ROM, PROM, EPROM, EEPROM, Primary vs Secondary</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>Number Systems: Binary, Octal, Decimal, Hexadecimal & Two's Complement</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>Logic Gates: AND, OR, NOT, NAND, NOR, XOR & Boolean expressions</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>ASCII, Unicode, BCD & Essential Keyboard Shortcuts</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-cyan-600 focus:ring-0">
+              <span>Cybersecurity basics: Phishing, Ransomware, Symmetric vs Asymmetric Keys</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: 2024 BUET QUESTION BANK (40 SOLVED) ==================== -->
     <section id="pane-questions" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
@@ -298,7 +563,7 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 3: TECHNICAL WRITTEN BLUEPRINT ==================== -->
+    <!-- ==================== TAB 4: TECHNICAL WRITTEN BLUEPRINT ==================== -->
     <section id="pane-written" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-6">
         <div>
@@ -391,7 +656,7 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 4: BUET VS. IBA PATTERN ==================== -->
+    <!-- ==================== TAB 5: BUET VS. IBA PATTERN ==================== -->
     <section id="pane-patterns" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 space-y-6">
         <div>
@@ -444,119 +709,6 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 5: SYLLABUS & HABIT TRACKER ==================== -->
-    <section id="pane-syllabus" class="space-y-6 hidden">
-      <!-- Progress Bar Card -->
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-          <div>
-            <h2 class="text-xl font-bold text-white">Preparation Syllabus & Habit Tracker</h2>
-            <p class="text-xs text-slate-400">Check off completed topics to update your overall readiness percentage</p>
-          </div>
-          <div class="text-right">
-            <span class="text-3xl font-black text-blue-400" id="study-progress-percent">0%</span>
-            <span class="text-xs text-slate-400 block" id="study-progress-count">0 of 20 topics done</span>
-          </div>
-        </div>
-        <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
-          <div id="study-progress-bar" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
-        </div>
-      </div>
-
-      <!-- Checklist Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <!-- Part A: CSE Core -->
-        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="font-bold text-white text-sm">Part A: Core CSE (BUET Written & MCQ)</h3>
-            <span class="badge-tag bg-blue-500/10 text-blue-400">Weight: 60%</span>
-          </div>
-
-          <div class="space-y-2 text-slate-300">
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>SQL Queries: Joins, Nested Subqueries, GROUP BY, HAVING</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>DBMS Normalization: 1NF, 2NF, 3NF, BCNF & Functional Dependencies</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>Networking: OSI 7 Layers & TCP/IP 4 Layers breakdown</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>Networking: IP Subnetting, CIDR prefix, VLSM host calculations</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>OS: CPU Scheduling (Round Robin, SJF, FCFS) Turnaround & Waiting time</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>OS: 4 Deadlock Conditions & Banker's Algorithm avoidance</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>Algorithms: Dijkstra, BFS, DFS, QuickSort, and Big-O Complexity</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
-              <span>OOP: Inheritance, Polymorphism, Abstraction, Encapsulation</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Part B: Non-Departmental -->
-        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="font-bold text-white text-sm">Part B: Non-Departmental (Math, English, GK)</h3>
-            <span class="badge-tag bg-amber-500/10 text-amber-400">Weight: 40%</span>
-          </div>
-
-          <div class="space-y-2 text-slate-300">
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Math: Logarithms & Exponential Indices equations</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Math: Vector Dot Product, Coordinates & Distance Formula</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Math: Trigonometry, Arc Length (s = r&theta;) & Mensuration</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Math: Permutations, Combinations & Dice Probability</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>English: Subject-Verb Agreement (as well as, neither-nor, collective nouns)</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>English: Appropriate Prepositions & Gerunds (susceptible to, went on)</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>English: Barron's GRE 333 High-Frequency Words</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Energy GK: Petrobangla's 13 subsidiaries, 29 gas fields, LNG terminals</span>
-            </label>
-            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
-              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
-              <span>Bangla: ব্যাকরণ (সন্ধি, সমাস, কারক, উপসর্গ, শুদ্ধ বানান)</span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ==================== TAB 6: BOOKS & ONLINE HUB ==================== -->
     <section id="pane-books" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 space-y-6">
@@ -569,7 +721,7 @@
           <!-- Physical Workbooks -->
           <div class="space-y-3">
             <h3 class="text-sm font-bold text-white flex items-center gap-2">
-              <span>📖</span> Physical Workbooks (Recommended to Buy 1 or 2)
+              <span>📖</span> Physical Workbooks & Guidebooks
             </h3>
             
             <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
@@ -586,8 +738,8 @@
             <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
               <div class="flex justify-between items-start">
                 <div>
-                  <span class="font-bold text-white">Khairul's Basic Math</span> or <span class="font-bold text-white">Saifur's Math</span>
-                  <span class="text-slate-400 block text-[11px]">Bangla Medium / English Medium Bank Math</span>
+                  <span class="font-bold text-white">Khairul's Basic Math / Advanced Math</span> or <span class="font-bold text-white">Agarwal / Math Bible</span>
+                  <span class="text-slate-400 block text-[11px]">Chapter-wise formulas & IBA Previous questions</span>
                 </div>
                 <span class="badge-tag bg-amber-500/10 text-amber-400 border border-amber-500/20">Crucial (Math)</span>
               </div>
@@ -597,12 +749,23 @@
             <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
               <div class="flex justify-between items-start">
                 <div>
-                  <span class="font-bold text-white">Master English</span> by Md. Jahangir Alam
+                  <span class="font-bold text-white">Master English</span> or <span class="font-bold text-white">Cliff's TOEFL</span>
                   <span class="text-slate-400 block text-[11px]">Grammar & Vocabulary Compendium</span>
                 </div>
                 <span class="badge-tag bg-blue-500/10 text-blue-400 border border-blue-500/20">Recommended</span>
               </div>
-              <p class="text-slate-400">Best for sentence correction, idioms, prepositions, and previous competitive exam English MCQs.</p>
+              <p class="text-slate-400">Best for sentence correction, idioms, prepositions, inversion, parallelism, and previous competitive exam English MCQs.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="font-bold text-white">MP3 / Agradut Bangla</span>
+                  <span class="text-slate-400 block text-[11px]">IBA & Govt Job Previous Questions</span>
+                </div>
+                <span class="badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Bangla</span>
+              </div>
+              <p class="text-slate-400">Focus strictly on grammar topics (সন্ধি, সমাস, কারক, উপসর্গ) and selected prominent authors.</p>
             </div>
           </div>
 
@@ -756,6 +919,7 @@
     // Render Questions
     function renderQuestions(catFilter = 'all') {
       const container = document.getElementById('question-cards-container');
+      if (!container) return;
       const filtered = catFilter === 'all' ? QUESTIONS_DATA : QUESTIONS_DATA.filter(q => q.cat === catFilter);
 
       container.innerHTML = filtered.map(q => `
@@ -803,7 +967,7 @@
 
     // Tab Navigation
     function switchTab(id) {
-      ['tracker', 'questions', 'written', 'patterns', 'syllabus', 'books'].forEach(tabId => {
+      ['tracker', 'syllabus', 'questions', 'written', 'patterns', 'books'].forEach(tabId => {
         const pane = document.getElementById('pane-' + tabId);
         const tabBtn = document.getElementById('tab-' + tabId);
         if (pane && tabBtn) {
