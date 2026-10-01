@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petrobangla & Govt Job Hub — Zeba Afia Shama</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Sleek custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f19; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    .badge-tag { @apply px-2.5 py-0.5 rounded-full text-xs font-semibold inline-flex items-center gap-1; }
+  </style>
+</head>
+<body class="bg-[#080c14] text-slate-100 antialiased p-3 md:p-8 min-h-screen">
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Top Profile & Recruitment Banner -->
+    <header class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="badge-tag bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Official 2026 Circular</span>
+            <span class="badge-tag bg-blue-500/20 text-blue-400 border border-blue-500/30">9th Grade (44,000–1,05,900 BDT)</span>
+            <span class="text-xs text-slate-400">Venue: BUET</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+            Petrobangla Assistant Manager (CSE / IT) Command Center
+          </h1>
+          <p class="text-sm text-slate-400 mt-1 max-w-3xl">
+            Candidate: <strong class="text-blue-300">Zeba Afia Shama</strong> • B.Sc CSE (3.65) & M.Sc CS (3.60) • 
+            <span class="text-emerald-400 font-medium">100% Eligible (Top Tier Merit Profile)</span>
+          </p>
+        </div>
+
+        <!-- Live Countdown Widget -->
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-4 min-w-[260px] text-center lg:text-right">
+          <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold" id="countdown-label">
+            Days Until Application Opens
+          </div>
+          <div class="text-2xl md:text-3xl font-black text-amber-400 tracking-tight mt-1" id="countdown-timer">
+            Calculating...
+          </div>
+          <div class="text-[12px] text-slate-400 mt-1">
+            Window: <strong>19 Oct (10 AM) – 17 Nov (5 PM)</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-slate-800/80 text-xs">
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block text-[11px]">Total Vacancies (CSE/IT)</span>
+          <span class="text-lg font-bold text-white">25 Posts</span>
+          <span class="text-blue-400 block text-[11px] mt-0.5">Across 8 Subsidiaries</span>
+        </div>
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block text-[11px]">Estimated Competition</span>
+          <span class="text-lg font-bold text-amber-300">~4,500 – 6,000</span>
+          <span class="text-amber-400/80 block text-[11px] mt-0.5">~200 per seat (Favorable)</span>
+        </div>
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block text-[11px]">Viva Voce Call (1:6)</span>
+          <span class="text-lg font-bold text-emerald-400">Top 150</span>
+          <span class="text-emerald-400/80 block text-[11px] mt-0.5">Rule 9 in Circular</span>
+        </div>
+        <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+          <span class="text-slate-400 block text-[11px]">Exam Mark Split</span>
+          <span class="text-lg font-bold text-indigo-400">60 MCQ + 40 Written</span>
+          <span class="text-indigo-400/80 block text-[11px] mt-0.5">Total: 100 Marks (60 Mins)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex border-b border-slate-800 space-x-1 sm:space-x-4 text-xs sm:text-sm font-medium overflow-x-auto pb-1">
+      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn px-4 py-3 border-b-2 border-blue-500 text-blue-400 font-semibold flex items-center gap-2 whitespace-nowrap">
+        <span>📖</span> 2024 BUET Real Questions (40 Solved)
+      </button>
+      <button onclick="switchTab('written')" id="tab-written" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <span>✍️</span> Technical Written Blueprint (40 Marks)
+      </button>
+      <button onclick="switchTab('deadlines')" id="tab-deadlines" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <span>🗓️</span> Dates, SMS & Vacancies
+      </button>
+      <button onclick="switchTab('syllabus')" id="tab-syllabus" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <span>🎯</span> Syllabus Checklist & Habit Tracker
+      </button>
+      <button onclick="switchTab('github')" id="tab-github" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <span>🚀</span> Publish on GitHub Pages
+      </button>
+    </nav>
+
+    <!-- ==================== TAB 1: 2024 BUET QUESTION BANK (40 SOLVED) ==================== -->
+    <section id="pane-questions" class="space-y-6">
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge-tag bg-indigo-500/20 text-indigo-300">Exam Date: 31 May 2024</span>
+              <span class="badge-tag bg-slate-800 text-slate-300">Venue: BUET</span>
+            </div>
+            <h2 class="text-xl font-bold text-white">Full Official 40 Non-Technical MCQ Question Bank</h2>
+            <p class="text-xs text-slate-400 mt-1">40 Questions × 1.5 Marks = 60 Marks • Filter by category to test your knowledge</p>
+          </div>
+
+          <!-- Filter buttons -->
+          <div class="flex flex-wrap items-center gap-2" id="filter-buttons">
+            <button onclick="filterQuestions('all')" class="q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white" data-cat="all">All (40)</button>
+            <button onclick="filterQuestions('math')" class="q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="math">Math & Aptitude (10)</button>
+            <button onclick="filterQuestions('english')" class="q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="english">English (10)</button>
+            <button onclick="filterQuestions('gk')" class="q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="gk">General Knowledge (10)</button>
+            <button onclick="filterQuestions('bangla')" class="q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700" data-cat="bangla">Bangla (10)</button>
+          </div>
+        </div>
+
+        <!-- Question Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" id="question-cards-container">
+          <!-- Dynamically populated from JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: TECHNICAL WRITTEN BLUEPRINT ==================== -->
+    <section id="pane-written" class="space-y-6 hidden">
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-6">
+        <div>
+          <span class="badge-tag bg-blue-500/20 text-blue-400 mb-2">5 Questions × 8 Marks = 40 Marks</span>
+          <h2 class="text-xl font-bold text-white">Technical Written Blueprint (CSE / IT Specific)</h2>
+          <p class="text-xs text-slate-400 mt-1">In BUET recruitment tests, CSE candidates get 5 pen-and-paper written technical questions. Here are the 5 exact high-probability problems with standard solutions:</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Q1: SQL -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-blue-400 uppercase tracking-wide">Problem 1: Database Management Systems (SQL)</span>
+              <span class="text-xs text-slate-500 font-mono">8 Marks</span>
+            </div>
+            <p class="text-xs text-slate-200 font-medium">Question: Given an <code>Employee (EmpID, EmpName, DeptID, Salary)</code> and <code>Department (DeptID, DeptName)</code> table, write SQL queries to:</p>
+            <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1 pl-2">
+              <li>Find the Department Name that pays the highest average employee salary.</li>
+              <li>Find the 2nd highest salary from the Employee table without using the <code>LIMIT</code> or <code>TOP</code> keyword.</li>
+            </ol>
+            <div class="p-3 bg-black/50 rounded-lg text-xs font-mono text-emerald-400 space-y-2 mt-2 border border-slate-800/80">
+              <div><span class="text-slate-400">// Query 1 (Dept with highest avg salary):</span><br>
+                SELECT d.DeptName, AVG(e.Salary) AS AvgSal <br>
+                FROM Employee e JOIN Department d ON e.DeptID = d.DeptID <br>
+                GROUP BY d.DeptName ORDER BY AvgSal DESC FETCH FIRST 1 ROW ONLY;
+              </div>
+              <div><span class="text-slate-400">// Query 2 (2nd highest salary without LIMIT):</span><br>
+                SELECT MAX(Salary) FROM Employee <br>
+                WHERE Salary &lt; (SELECT MAX(Salary) FROM Employee);
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2: Networking Subnetting -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Problem 2: Computer Networks (IP Subnetting / VLSM)</span>
+              <span class="text-xs text-slate-500 font-mono">8 Marks</span>
+            </div>
+            <p class="text-xs text-slate-200 font-medium">Question: An ISP assigns Petrobangla the IP block <code>192.168.10.0/24</code>. Divide this block into 4 equal subnets. For Subnet 1, determine: (a) Subnet Mask, (b) Network Address, (c) First Valid Host IP, (d) Last Valid Host IP, and (e) Broadcast Address.</p>
+            <div class="p-3 bg-black/50 rounded-lg text-xs font-mono text-slate-300 space-y-1.5 mt-2 border border-slate-800/80">
+              <div class="text-emerald-400">Solution:</div>
+              <div>• To create 4 subnets: 2^n &ge; 4 &rArr; borrow 2 bits &rArr; New prefix = /26 (256 - 64 = 64 IPs per block)</div>
+              <div>• (a) Subnet Mask: <span class="text-amber-300">255.255.255.192</span></div>
+              <div>• (b) Network Address: <span class="text-amber-300">192.168.10.0</span></div>
+              <div>• (c) First Usable Host: <span class="text-amber-300">192.168.10.1</span></div>
+              <div>• (d) Last Usable Host: <span class="text-amber-300">192.168.10.62</span></div>
+              <div>• (e) Broadcast Address: <span class="text-amber-300">192.168.10.63</span></div>
+            </div>
+          </div>
+
+          <!-- Q3: Operating Systems CPU Scheduling -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-indigo-400 uppercase tracking-wide">Problem 3: Operating Systems (CPU Scheduling & Deadlock)</span>
+              <span class="text-xs text-slate-500 font-mono">8 Marks</span>
+            </div>
+            <p class="text-xs text-slate-200 font-medium">Question: Consider processes P1 (Burst: 6ms), P2 (Burst: 4ms), P3 (Burst: 8ms) arriving at time t=0. Draw the Gantt chart and calculate Average Waiting Time (AWT) using Round Robin with Time Quantum Q = 2ms.</p>
+            <div class="p-3 bg-black/50 rounded-lg text-xs font-mono text-slate-300 space-y-1 mt-2 border border-slate-800/80">
+              <div class="text-indigo-300">Gantt Chart: | P1(0-2) | P2(2-4) | P3(4-6) | P1(6-8) | P2(8-10) | P3(10-12) | P1(12-14) | P3(14-16) | P3(16-18) |</div>
+              <div>Completion Times: P1 = 14ms, P2 = 10ms, P3 = 18ms</div>
+              <div>Waiting Time: P1 = 14 - 6 = 8ms | P2 = 10 - 4 = 6ms | P3 = 18 - 8 = 10ms</div>
+              <div class="text-emerald-400 font-bold">Average Waiting Time (AWT) = (8 + 6 + 10) / 3 = 8.0 ms</div>
+            </div>
+          </div>
+
+          <!-- Q4: Data Structures & Algorithms -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Problem 4: Data Structures & Algorithms (Trees / Graphs)</span>
+              <span class="text-xs text-slate-500 font-mono">8 Marks</span>
+            </div>
+            <p class="text-xs text-slate-200 font-medium">Question: Insert keys [50, 30, 70, 20, 40, 60, 80] into an initially empty Binary Search Tree (BST). Give the In-order, Pre-order, and Post-order traversals.</p>
+            <div class="p-3 bg-black/50 rounded-lg text-xs font-mono text-slate-300 space-y-1 mt-2 border border-slate-800/80">
+              <div>• <span class="text-amber-300">In-order (Sorted):</span> 20, 30, 40, 50, 60, 70, 80</div>
+              <div>• <span class="text-amber-300">Pre-order (Root-L-R):</span> 50, 30, 20, 40, 70, 60, 80</div>
+              <div>• <span class="text-amber-300">Post-order (L-R-Root):</span> 20, 40, 30, 60, 80, 70, 50</div>
+            </div>
+          </div>
+
+          <!-- Q5: Programming & OOP -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-rose-400 uppercase tracking-wide">Problem 5: Object-Oriented Programming (Design Principles)</span>
+              <span class="text-xs text-slate-500 font-mono">8 Marks</span>
+            </div>
+            <p class="text-xs text-slate-200 font-medium">Question: What is the difference between Function Overloading (Compile-time) and Function Overriding (Run-time)? Provide a brief C++ or Java demonstration showing Virtual Functions / <code>@Override</code>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: DATES, SMS & VACANCIES ==================== -->
+    <section id="pane-deadlines" class="space-y-6 hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Vacancy Breakdown Card -->
+        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="text-base font-bold text-white">Assistant Manager (CSE / IT) Vacancies</h3>
+            <span class="badge-tag bg-blue-500/20 text-blue-400">Total: 25 Posts</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">তিতাস গ্যাস ট্রান্সমিশন (TGTDCL)</span>
+              <span class="font-bold text-emerald-400 text-sm">12 Posts</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">সিলেট গ্যাস ফিল্ডস (SGFL)</span>
+              <span class="font-bold text-blue-400 text-sm">04 Posts</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">গ্যাস ট্রান্সমিশন কোম্পানি (GTCL)</span>
+              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">বাখরাবাদ গ্যাস ডিস্ট্রিবিউশন (BGDCL)</span>
+              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">পশ্চিমাঞ্চল গ্যাস কোম্পানি (PGCL)</span>
+              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">বাংলাদেশ গ্যাস ফিল্ডস (BGFCL)</span>
+              <span class="font-bold text-slate-200 text-sm">01 Post</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">বাপেক্স (BAPEX)</span>
+              <span class="font-bold text-slate-200 text-sm">01 Post</span>
+            </div>
+            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="font-medium text-slate-200">জালালাবাদ গ্যাস ডিস্ট্রিবিউশন (JGTDSL)</span>
+              <span class="font-bold text-slate-200 text-sm">01 Post</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teletalk SMS Cheat Sheet & Official Schedule -->
+        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="text-base font-bold text-white">Application Timeline & SMS Format</h3>
+            <span class="badge-tag bg-amber-500/20 text-amber-400">Teletalk SMS: 16222</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 space-y-1">
+              <div class="flex justify-between font-semibold text-slate-200">
+                <span>Application Opens:</span>
+                <span class="text-emerald-400">19 Oct 2026 (10:00 AM)</span>
+              </div>
+              <div class="flex justify-between font-semibold text-slate-200">
+                <span>Application Closes:</span>
+                <span class="text-rose-400">17 Nov 2026 (05:00 PM)</span>
+              </div>
+              <div class="flex justify-between font-semibold text-slate-200">
+                <span>Fee Deadline:</span>
+                <span class="text-amber-400">20 Nov 2026 (05:00 PM)</span>
+              </div>
+            </div>
+
+            <!-- SMS Commands -->
+            <div class="p-3 bg-black/50 rounded-xl border border-slate-800 font-mono space-y-2">
+              <div class="text-[11px] text-slate-400">// 1st SMS (After form submission):</div>
+              <div class="text-emerald-400 font-bold">BOGMC &lt;User ID&gt; &rarr; 16222</div>
+              <div class="text-[11px] text-slate-400">// 2nd SMS (After receiving PIN):</div>
+              <div class="text-emerald-400 font-bold">BOGMC YES &lt;PIN&gt; &rarr; 16222</div>
+            </div>
+
+            <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-amber-300">
+              <strong>⚠️ Condition 18 Warning:</strong> You must apply for <em>only one post</em>. If an applicant submits applications for more than one post, all submissions will be permanently disqualified.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: SYLLABUS CHECKLIST & HABIT TRACKER ==================== -->
+    <section id="pane-syllabus" class="space-y-6 hidden">
+      <!-- Progress Bar -->
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <div>
+            <h2 class="text-xl font-bold text-white">Interactive Syllabus Checklist</h2>
+            <p class="text-xs text-slate-400">State is saved automatically in your browser's localStorage</p>
+          </div>
+          <div class="text-right">
+            <span class="text-3xl font-black text-blue-400" id="study-progress-percent">0%</span>
+            <span class="text-xs text-slate-400 block" id="study-progress-count">0 of 20 topics done</span>
+          </div>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+          <div id="study-progress-bar" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Checklist Modules -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs" id="syllabus-checklist-container">
+        <!-- Part A: CSE Core -->
+        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="font-bold text-white text-sm">Part A: Core CSE (BUET Written & MCQ)</h3>
+            <span class="badge-tag bg-blue-500/10 text-blue-400">Weight: 60%</span>
+          </div>
+
+          <div class="space-y-2.5 text-slate-300" id="cse-checklist">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>SQL Queries: Joins, Nested Subqueries, GROUP BY, HAVING</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>DBMS Normalization: 1NF, 2NF, 3NF, BCNF & Functional Dependencies</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Networking: OSI 7 Layers & TCP/IP 4 Layers breakdown</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Networking: IP Subnetting, CIDR prefix, VLSM host calculations</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OS: CPU Scheduling (Round Robin, SJF, FCFS) Turnaround & Waiting time</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OS: 4 Deadlock Conditions & Banker's Algorithm avoidance</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>Algorithms: Dijkstra, BFS, DFS, QuickSort, and Big-O Complexity</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
+              <span>OOP: Inheritance, Polymorphism, Abstraction, Encapsulation</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Part B: Non-Departmental -->
+        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <h3 class="font-bold text-white text-sm">Part B: Non-Departmental (Math, English, GK)</h3>
+            <span class="badge-tag bg-amber-500/10 text-amber-400">Weight: 40%</span>
+          </div>
+
+          <div class="space-y-2.5 text-slate-300" id="non-tech-checklist">
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Math: Logarithms & Exponential Indices equations</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Math: Vector Dot Product, Coordinates & Distance Formula</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Math: Trigonometry, Arc Length (s = r&theta;) & Mensuration</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Math: Permutations, Combinations & Dice Probability</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>English: Subject-Verb Agreement (as well as, neither-nor, collective nouns)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>English: Appropriate Prepositions & Gerunds (susceptible to, went on)</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>English: Barron's GRE 333 High-Frequency Words</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Energy GK: Petrobangla's 13 subsidiaries, 29 gas fields, LNG terminals</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
+              <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
+              <span>Bangla: ব্যাকরণ (সন্ধি, সমাস, কারক, উপসর্গ, শুদ্ধ বানান)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: GITHUB DEPLOYMENT ==================== -->
+    <section id="pane-github" class="space-y-6 hidden">
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-6">
+        <div>
+          <span class="badge-tag bg-emerald-500/20 text-emerald-400 mb-2">Free Hosting • 100% Client-Side</span>
+          <h2 class="text-xl font-bold text-white">How to Host This Dashboard Publicly on Your GitHub</h2>
+          <p class="text-xs text-slate-400 mt-1">You asked: <em>"can i publicly publish this dashboard using my github?"</em> Yes! You can host it in less than 3 minutes using <strong>GitHub Pages</strong> at zero cost.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <!-- Step 1 -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-blue-400 font-bold">
+              <span>Step 1: Create Repo</span>
+              <span class="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">Web UI</span>
+            </div>
+            <p class="text-slate-300">Go to your GitHub account (<code>github.com/ZebaAfiaShama</code>) and create a new public repository, for example:</p>
+            <div class="p-2 bg-black/40 rounded font-mono text-emerald-400">petrobangla-job-tracker</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-indigo-400 font-bold">
+              <span>Step 2: Upload File</span>
+              <span class="px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">Name it index.html</span>
+            </div>
+            <p class="text-slate-300">Save this dashboard file as <code>index.html</code> inside that repository and commit it to the <code>main</code> branch.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-emerald-400 font-bold">
+              <span>Step 3: Enable Pages</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">One Click</span>
+            </div>
+            <p class="text-slate-300">In your repo &rarr; <strong>Settings</strong> &rarr; <strong>Pages</strong>. Under <em>Build and deployment</em>, set Source: <strong>Deploy from a branch</strong>, Branch: <strong>main / (root)</strong> &rarr; <strong>Save</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="p-4 bg-slate-900/80 rounded-xl border border-blue-500/30 text-xs space-y-2">
+          <div class="font-bold text-white flex items-center gap-2">
+            <span>🎉 Your Live URL will be:</span>
+            <code class="px-2.5 py-1 bg-black/60 rounded text-emerald-400 text-xs">https://zebaafiashama.github.io/petrobangla-job-tracker/</code>
+          </div>
+          <p class="text-slate-400">
+            Because this entire dashboard is built with pure Tailwind CSS and vanilla JavaScript, it runs completely client-side without any backend. Your checkboxes and notes will persist in whatever browser you or anyone opens it in!
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SCRIPT FOR QUESTIONS & LOGIC -->
+  <script>
+    // 40 BUET PETROBANGLA 2024 QUESTIONS DATA
+    const QUESTIONS_DATA = [
+      // Bangla (1 to 10)
+      { id: 1, cat: 'bangla', q: "শ্রী চৈতন্যদেবের জীবনীগ্রন্থ ‘চৈতন্যমঙ্গল’ এর লেখক কে?", opt: ["বৃন্দাবন দাস", "জ্ঞানদাস", "গোবিন্দ চন্দ্র দাস", "লোচন দাস"], ans: "লোচন দাস", exp: "লোচন দাস চৈতন্যমঙ্গল কাব্য রচনা করেন। অন্য চৈতন্যমঙ্গল রচয়িতা হলেন জয়ানন্দ।" },
+      { id: 2, cat: 'bangla', q: "দৌলত উজির বাহরাম খান কোন অঞ্চলের অধিবাসী ছিলেন?", opt: ["ফরিদপুর", "সিলেট", "কৃষ্ণনগর", "চট্টগ্রাম"], ans: "চট্টগ্রাম", exp: "মধ্যযুগের বিখ্যাত কবি দৌলত উজির বাহরাম খান চট্টগ্রামের ফতেহাবাদের অধিবাসী ছিলেন। তাঁর বিখ্যাত কাব্য ‘লাইলী-মজনু’।" },
+      { id: 3, cat: 'bangla', q: "‘একাত্তরের যীশু’ গল্পের রচয়িতা কে?", opt: ["শাহরিয়ার কবির", "সেলিম আল দীন", "মামুনুর রশীদ", "সৈয়দ শামসুল হক"], ans: "শাহরিয়ার কবির", exp: "‘একাত্তরের যীশু’ শাহরিয়ার কবিরের রচিত একটি বিখ্যাত মুক্তিযুদ্ধভিত্তিক গল্পগ্রন্থ (পরে এটি চলচ্চিত্রায়িত হয়)।" },
+      { id: 4, cat: 'bangla', q: "‘সুনীল’ শব্দের ‘সু’ কোন উপসর্গ?", opt: ["তৎসম", "খাঁটি বাংলা", "ফারসি", "তুর্কি"], ans: "তৎসম", exp: "‘সু’ তৎসম এবং খাঁটি বাংলা উভয় উপসর্গ হিসেবে ব্যবহৃত হয়। তবে ‘নীল’ তৎসম শব্দ হওয়ায় এর সাথে যুক্ত ‘সু’ একটি তৎসম উপসর্গ।" },
+      { id: 5, cat: 'bangla', q: "‘পেয়ারা’ কোন ভাষা থেকে আগত শব্দ?", opt: ["হিন্দি", "উর্দু", "পর্তুগীজ", "গ্রিক"], ans: "পর্তুগীজ", exp: "আনারস, পেয়ারা, পাউরুটি, আলমারি, বালতি, চাবি ইত্যাদি পর্তুগীজ ভাষা থেকে আগত শব্দ।" },
+      { id: 6, cat: 'bangla', q: "‘আকাশ’ শব্দের সমার্থক শব্দ কোনটি?", opt: ["অন্তরীক্ষ", "বিধু", "প্রভাকর", "সুধাকর"], ans: "অন্তরীক্ষ", exp: "আকাশের সমার্থক: অন্তরীক্ষ, গগন, অম্বর, ব্যোম। বিধু/সুধাকর = চাঁদ; প্রভাকর = সূর্য।" },
+      { id: 7, cat: 'bangla', q: "‘কপাল’ শব্দের প্রতিশব্দ কোনটি?", opt: ["ললাট", "তালাশ", "জ্যোতি", "শিখা"], ans: "ললাট", exp: "কপালের প্রতিশব্দ ললাট, ভাল, অদৃষ্ট, ভাগ্য।" },
+      { id: 8, cat: 'bangla', q: "‘মেঘের ছায়া’ প্রবচনটির অর্থ কি?", opt: ["অন্ধকার", "ক্ষণস্থায়ী সুখ", "বৃষ্টির পূর্বাভাস", "অশুভ লক্ষণ"], ans: "ক্ষণস্থায়ী সুখ", exp: "‘মেঘের ছায়া’ বাগধারাটির প্রচলিত অর্থ ক্ষণস্থায়ী সুখ বা ক্ষণস্থায়ী বস্তু।" },
+      { id: 9, cat: 'bangla', q: "যে সমাসে পূর্বপদ ও পরপদের কোনটির অর্থ না বুঝিয়ে অন্য কিছু বোঝায় তাকে কোন সমাস বলে?", opt: ["দ্বিগু সমাস", "তৎপুরুষ সমাস", "বহুব্রীহি সমাস", "কর্মধারয় সমাস"], ans: "বহুব্রীহি সমাস", exp: "বহুব্রীহি সমাসে পূর্বপদ বা পরপদ কোনোটির অর্থ প্রধান না হয়ে অন্য একটি তৃতীয় পদকে নির্দেশ করে (যেমন: দশানন = রাবণ)।" },
+      { id: 10, cat: 'bangla', q: "“সে তিন দিন পথ চলল।” এখানে ‘তিন দিন’ কোন কারকে কোন বিভক্তি?", opt: ["কর্ম কারকে শূন্য বিভক্তি", "করণ কারকে তৃতীয়া বিভক্তি", "অপাদান কারকে শূন্য বিভক্তি", "অধিকরণ কারকে শূন্য বিভক্তি"], ans: "কর্ম কারকে শূন্য বিভক্তি", exp: "ব্যপ্ত্যর্থে কালবাচক শব্দে কর্ম কারক হয় (ভাষা সৌরভ ব্যাকরণ অনুযায়ী) অথবা কালাধিকরণ।" },
+
+      // General Knowledge (11 to 20)
+      { id: 11, cat: 'gk', q: "Which was the first country to recognize Bangladesh?", opt: ["Bhutan", "India", "Poland", "Bulgaria"], ans: "Bhutan", exp: "Bhutan officially recognized Bangladesh on 6 December 1971, a few hours before India on the same day." },
+      { id: 12, cat: 'gk', q: "The only foreigner awarded the title of 'Bir Protik' is?", opt: ["W.A.S Ouderland", "Simon Dring", "Sam Manekshaw", "Mark Tully"], ans: "W.A.S Ouderland", exp: "William A. S. Ouderland (Dutch-Australian) secretly gathered intelligence for freedom fighters during the 1971 Liberation War." },
+      { id: 13, cat: 'gk', q: "When did Bangladesh become a member of OIC?", opt: ["1973", "1974", "1975", "1976"], ans: "1974", exp: "Bangladesh became the 32nd member of the Organisation of Islamic Cooperation (OIC) on 23 February 1974 at Lahore summit." },
+      { id: 14, cat: 'gk', q: "In which year did the Bangladesh cricket team gain Test (full membership) status from ICC?", opt: ["2002", "1998", "2000", "1997"], ans: "2000", exp: "Bangladesh was awarded ICC Full Test status on 26 June 2000 and played its inaugural Test against India in Nov 2000." },
+      { id: 15, cat: 'gk', q: "The Sea of Azov is located between which two countries?", opt: ["Ukraine and Turkey", "Ukraine and Russia", "Turkey and Georgia", "Kazakhstan and Uzbekistan"], ans: "Ukraine and Russia", exp: "The Sea of Azov is a body of water in Eastern Europe bounded by Russia on the east and Ukraine on the northwest." },
+      { id: 16, cat: 'gk', q: "The Battle of Waterloo was fought in ___?", opt: ["1815", "1817", "1821", "1818"], ans: "1815", exp: "The Battle of Waterloo was fought on 18 June 1815 in modern-day Belgium, marking the final defeat of Napoleon Bonaparte." },
+      { id: 17, cat: 'gk', q: "Which country is the host of the 2024 BRICS summit?", opt: ["Brazil", "Russia", "India", "South Africa"], ans: "Russia", exp: "The 16th annual BRICS summit took place in Kazan, Russia in October 2024." },
+      { id: 18, cat: 'gk', q: "Which country is the latest member of NATO?", opt: ["Finland", "Sweden", "Ukraine", "Georgia"], ans: "Sweden", exp: "Sweden joined NATO as its 32nd member on 7 March 2024 (Finland was 31st in April 2023)." },
+      { id: 19, cat: 'gk', q: "Which President of Iran recently died in a helicopter crash?", opt: ["Ebrahim Raisi", "Hassan Rouhani", "Mahmoud Ahmadinejad", "Mohammad Mokhber"], ans: "Ebrahim Raisi", exp: "President Ebrahim Raisi died in a helicopter crash in Varzaqan, Iran on 19 May 2024, just 12 days before this exam!" },
+      { id: 20, cat: 'gk', q: "Who invented the first Digital Computer?", opt: ["John Vincent Atanasoff", "Dagus Elbert", "Charles Babbage", "Isaac Newton"], ans: "John Vincent Atanasoff", exp: "John Vincent Atanasoff designed the Atanasoff–Berry Computer (ABC) in 1937–1942, considered the first electronic digital computer." },
+
+      // English (21 to 30)
+      { id: 21, cat: 'english', q: "Which of these words is closest in meaning to the word 'Gracious'?", opt: ["Pretty", "Clever", "Pleasant", "Present"], ans: "Pleasant", exp: "'Gracious' means courteous, kind, and pleasant." },
+      { id: 22, cat: 'english', q: "Which of the following options is closest in meaning to 'Naive'?", opt: ["Lack of intelligence", "Lack of wisdom and experience", "Lack of skill", "Lack of interest"], ans: "Lack of wisdom and experience", exp: "'Naive' describes someone showing an innocent lack of worldly experience, judgment, or informed wisdom." },
+      { id: 23, cat: 'english', q: "What is the adjective form of 'Domination'?", opt: ["Dominate", "Dominating", "Dominant", "Domination"], ans: "Dominant", exp: "Noun: Domination | Verb: Dominate | Adjective: Dominant." },
+      { id: 24, cat: 'english', q: "English is no longer ___ unique possession of the British or the Americans.", opt: ["a", "an", "the", "no article"], ans: "a", exp: "Although 'unique' starts with vowel 'u', its phonetic pronunciation begins with a consonant glide sound /juː/, taking indefinite article 'a'." },
+      { id: 25, cat: 'english', q: "The team captain, as well as his players, ___ anxious.", opt: ["is", "am", "are", "being"], ans: "is", exp: "When two subjects are connected by 'as well as', 'together with', or 'along with', the verb agrees with the first subject ('captain' is singular &rarr; 'is')." },
+      { id: 26, cat: 'english', q: "The committee ___ how to proceed.", opt: ["decide", "decides", "have decided", "are deciding"], ans: "decides", exp: "Collective nouns (like 'committee', 'jury') acting as a single cohesive unit take a singular verb ('decides')." },
+      { id: 27, cat: 'english', q: "We ___ bought our tickets yet.", opt: ["haven't", "didn't", "don't", "won't"], ans: "haven't", exp: "The adverb 'yet' in negative sentences typically requires the Present Perfect tense ('haven't bought')." },
+      { id: 28, cat: 'english', q: "He went on ___.", opt: ["grumble", "grumbling", "grumbled", "to grumble"], ans: "grumbling", exp: "Phrasal verbs with prepositions ('go on', 'keep on') are followed by a gerund (-ing form)." },
+      { id: 29, cat: 'english', q: "We are going on vacation ___ December.", opt: ["on", "in", "during", "at"], ans: "in", exp: "Months of the year take the preposition 'in' ('in December', 'in July'). Specific dates take 'on' ('on 16 December')." },
+      { id: 30, cat: 'english', q: "Children are susceptible ___ disease.", opt: ["with", "to", "by", "of"], ans: "to", exp: "The appropriate preposition after 'susceptible' is always 'to' (meaning prone or vulnerable to)." },
+
+      // Math & General Aptitude (31 to 40)
+      { id: 31, cat: 'math', q: "log₂4 + log₂8 - log₄16 = ?", opt: ["1", "2", "3", "4"], ans: "3", exp: "log₂4 = 2, log₂8 = 3, log₄16 = 2. Therefore: 2 + 3 - 2 = 3." },
+      { id: 32, cat: 'math', q: "If 5^(x+1) - 2 * 5^x - 3 = 0, what is the value of x?", opt: ["log₅ 3", "log₃ 5", "5", "3"], ans: "0 = log₅ 1", exp: "Rewrite: 5·5^x - 2·5^x = 3 &rArr; 3·5^x = 3 &rArr; 5^x = 1 &rArr; x = 0 (Notice 0 = log₅ 1, answer is x=0)." },
+      { id: 33, cat: 'math', q: "Given A = 2i - 3j + 4k and B = i + 2j - k, what is the dot product A · B?", opt: ["- 8", "0", "1", "5"], ans: "- 8", exp: "A · B = (2)(1) + (-3)(2) + (4)(-1) = 2 - 6 - 4 = -8." },
+      { id: 34, cat: 'math', q: "A right-angled triangle has a hypotenuse of length 10 cm and one acute angle 30°. What are the lengths of the other two sides?", opt: ["5 cm and 5 cm", "5 cm and 10 cm", "10 cm and 5√3 cm", "5 cm and 5√3 cm"], ans: "5 cm and 5√3 cm", exp: "Opposite = 10 * sin(30°) = 10 * (1/2) = 5 cm. Adjacent = 10 * cos(30°) = 10 * (√3/2) = 5√3 cm." },
+      { id: 35, cat: 'math', q: "The perimeter of a rectangle is 24 inches, and its length is 3 times its width. What are the length and width of the rectangle?", opt: ["L: 6, W: 2", "L: 9, W: 3", "L: 12, W: 4", "L: 18, W: 6"], ans: "Length: 9 inches, Width: 3 inches", exp: "Perimeter = 2(L + W) = 2(3W + W) = 8W = 24 &rArr; W = 3 inches, L = 3(3) = 9 inches." },
+      { id: 36, cat: 'math', q: "A circle has a radius of 30 cm. Determine the length of the arc subtended by an angle of 60° at the center of the circle.", opt: ["(π/6) cm", "6π cm", "10π cm", "20π cm"], ans: "10π cm", exp: "Formula: s = rθ. Angle in radians θ = 60° * (π / 180°) = π/3. Arc length s = 30 * (π/3) = 10π cm." },
+      { id: 37, cat: 'math', q: "Find the value of k if the distance between (k, 3) and (2, 3) is 5.", opt: ["5", "8", "6", "7"], ans: "7", exp: "Distance formula: √[(k - 2)² + (3 - 3)²] = |k - 2| = 5 &rArr; k - 2 = 5 &rArr; k = 7 (or k = -3)." },
+      { id: 38, cat: 'math', q: "What is the area under the curve y = x² from x = 0 to x = 1?", opt: ["1/2", "1/3", "1/4", "2/3"], ans: "1/3", exp: "Area = ∫₀¹ x² dx = [x³/3]₀¹ = (1³/3) - 0 = 1/3." },
+      { id: 39, cat: 'math', q: "What is the probability of getting sum as 7 when two dice are thrown?", opt: ["1/4", "1/5", "2/5", "1/6"], ans: "1/6", exp: "Total possible outcomes = 6 * 6 = 36. Favorable pairs summing to 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6 pairs. Probability = 6/36 = 1/6." },
+      { id: 40, cat: 'math', q: "In how many ways can a committee of 4 people be chosen out of 8 people?", opt: ["32", "70", "110", "126"], ans: "70", exp: "Combinations formula: ⁸C₄ = (8 × 7 × 6 × 5) / (4 × 3 × 2 × 1) = 1680 / 24 = 70 ways." }
+    ];
+
+    // Render Questions
+    function renderQuestions(catFilter = 'all') {
+      const container = document.getElementById('question-cards-container');
+      const filtered = catFilter === 'all' ? QUESTIONS_DATA : QUESTIONS_DATA.filter(q => q.cat === catFilter);
+
+      container.innerHTML = filtered.map(q => `
+        <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold ${
+                q.cat === 'math' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
+                q.cat === 'english' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' :
+                q.cat === 'bangla' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+                'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20'
+              }">Q${q.id} • ${q.cat.toUpperCase()}</span>
+              <button onclick="toggleAnswer(${q.id})" class="text-xs text-blue-400 hover:underline">Show Answer &rarr;</button>
+            </div>
+            <p class="text-xs font-semibold text-white leading-relaxed">${q.q}</p>
+            
+            <div class="grid grid-cols-2 gap-1.5 mt-3 text-[11px] text-slate-300 font-mono">
+              ${q.opt.map(opt => `<div class="p-1.5 rounded bg-black/40 border border-slate-800/80">${opt}</div>`).join('')}
+            </div>
+          </div>
+
+          <div id="ans-box-${q.id}" class="hidden p-2.5 bg-black/60 rounded-lg border border-emerald-500/30 text-xs space-y-1 mt-2">
+            <div class="text-emerald-400 font-bold">Answer: ${q.ans}</div>
+            <div class="text-slate-400 text-[11px]">${q.exp}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleAnswer(id) {
+      const el = document.getElementById('ans-box-' + id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function filterQuestions(cat) {
+      document.querySelectorAll('.q-filter').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white";
+        } else {
+          btn.className = "q-filter px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700";
+        }
+      });
+      renderQuestions(cat);
+    }
+
+    // Tabs
+    function switchTab(id) {
+      ['questions', 'written', 'deadlines', 'syllabus', 'github'].forEach(tabId => {
+        const pane = document.getElementById('pane-' + tabId);
+        const tabBtn = document.getElementById('tab-' + tabId);
+        if (tabId === id) {
+          pane.classList.remove('hidden');
+          tabBtn.classList.add('border-blue-500', 'text-blue-400', 'font-semibold');
+          tabBtn.classList.remove('border-transparent', 'text-slate-400');
+        } else {
+          pane.classList.add('hidden');
+          tabBtn.classList.remove('border-blue-500', 'text-blue-400', 'font-semibold');
+          tabBtn.classList.add('border-transparent', 'text-slate-400');
+        }
+      });
+    }
+
+    // Live Countdown
+    function updateCountdown() {
+      const openDate = new Date('2026-10-19T10:00:00+06:00').getTime();
+      const closeDate = new Date('2026-11-17T17:00:00+06:00').getTime();
+      const now = new Date().getTime();
+
+      const labelEl = document.getElementById('countdown-label');
+      const timerEl = document.getElementById('countdown-timer');
+
+      if (now < openDate) {
+        const diff = openDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        labelEl.innerText = "Days Until Application Opens";
+        timerEl.innerText = `${days}d ${hours}h Left`;
+      } else if (now < closeDate) {
+        const diff = closeDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        labelEl.innerText = "Application Live! Closes In:";
+        timerEl.innerText = `${days}d ${hours}h`;
+        timerEl.className = "text-2xl md:text-3xl font-black text-emerald-400 tracking-tight mt-1";
+      } else {
+        labelEl.innerText = "Application Window";
+        timerEl.innerText = "Closed";
+      }
+    }
+
+    // Syllabus Checklist Sync
+    function syncCheckboxes() {
+      const cbs = document.querySelectorAll('.study-cb');
+      const state = {};
+      let checked = 0;
+      cbs.forEach((cb, idx) => {
+        state[idx] = cb.checked;
+        if (cb.checked) checked++;
+      });
+      localStorage.setItem('petro_study_cbs', JSON.stringify(state));
+
+      const total = cbs.length;
+      const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+      document.getElementById('study-progress-percent').innerText = `${pct}%`;
+      document.getElementById('study-progress-count').innerText = `${checked} of ${total} topics done`;
+      document.getElementById('study-progress-bar').style.width = `${pct}%`;
+    }
+
+    function loadSyllabusState() {
+      const raw = localStorage.getItem('petro_study_cbs');
+      if (raw) {
+        const state = JSON.parse(raw);
+        const cbs = document.querySelectorAll('.study-cb');
+        cbs.forEach((cb, idx) => {
+          if (state[idx] !== undefined) cb.checked = state[idx];
+        });
+      }
+      syncCheckboxes();
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQuestions('all');
+      updateCountdown();
+      setInterval(updateCountdown, 60000);
+      loadSyllabusState();
+    });
+  </script>
+</body>
+</html>
