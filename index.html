@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Petrobangla & Govt Job Hub — Zeba Afia Shama</title>
+  <title>Petrobangla & Govt Job Command Center — Zeba Afia Shama</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
-    /* Sleek custom scrollbars */
+    /* Custom sleek scrollbar */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #0b0f19; }
+    ::-webkit-scrollbar-track { background: #080c14; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #334155; }
     .badge-tag { @apply px-2.5 py-0.5 rounded-full text-xs font-semibold inline-flex items-center gap-1; }
@@ -27,10 +27,10 @@
           <div class="flex flex-wrap items-center gap-2 mb-2">
             <span class="badge-tag bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Official 2026 Circular</span>
             <span class="badge-tag bg-blue-500/20 text-blue-400 border border-blue-500/30">9th Grade (44,000–1,05,900 BDT)</span>
-            <span class="text-xs text-slate-400">Venue: BUET</span>
+            <span class="badge-tag bg-purple-500/20 text-purple-300 border border-purple-500/30">Venue: BUET</span>
           </div>
           <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
-            Petrobangla Assistant Manager (CSE / IT) Command Center
+            Govt & Autonomous Job Command Center
           </h1>
           <p class="text-sm text-slate-400 mt-1 max-w-3xl">
             Candidate: <strong class="text-blue-300">Zeba Afia Shama</strong> • B.Sc CSE (3.65) & M.Sc CS (3.60) • 
@@ -38,24 +38,32 @@
           </p>
         </div>
 
-        <!-- Live Countdown Widget -->
-        <div class="bg-black/50 border border-slate-800 rounded-xl p-4 min-w-[260px] text-center lg:text-right">
-          <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold" id="countdown-label">
-            Days Until Application Opens
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <!-- Live Countdown Widget -->
+          <div class="bg-black/50 border border-slate-800 rounded-xl p-3.5 min-w-[240px] text-center lg:text-right">
+            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold" id="countdown-label">
+              Days Until Application Opens
+            </div>
+            <div class="text-xl md:text-2xl font-black text-amber-400 tracking-tight mt-0.5" id="countdown-timer">
+              Calculating...
+            </div>
+            <div class="text-[11px] text-slate-400 mt-0.5">
+              Opens: <strong>19 Oct 2026 (10 AM)</strong>
+            </div>
           </div>
-          <div class="text-2xl md:text-3xl font-black text-amber-400 tracking-tight mt-1" id="countdown-timer">
-            Calculating...
-          </div>
-          <div class="text-[12px] text-slate-400 mt-1">
-            Window: <strong>19 Oct (10 AM) – 17 Nov (5 PM)</strong>
-          </div>
+
+          <!-- Add Job Button -->
+          <button onclick="openAddJobModal()" class="px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Add Another Job
+          </button>
         </div>
       </div>
 
-      <!-- Quick Metrics Strip -->
+      <!-- Quick Stats Strip -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-slate-800/80 text-xs">
         <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
-          <span class="text-slate-400 block text-[11px]">Total Vacancies (CSE/IT)</span>
+          <span class="text-slate-400 block text-[11px]">Petrobangla AM (CSE/IT)</span>
           <span class="text-lg font-bold text-white">25 Posts</span>
           <span class="text-blue-400 block text-[11px] mt-0.5">Across 8 Subsidiaries</span>
         </div>
@@ -78,26 +86,190 @@
     </header>
 
     <!-- Navigation Tabs -->
-    <nav class="flex border-b border-slate-800 space-x-1 sm:space-x-4 text-xs sm:text-sm font-medium overflow-x-auto pb-1">
-      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn px-4 py-3 border-b-2 border-blue-500 text-blue-400 font-semibold flex items-center gap-2 whitespace-nowrap">
-        <span>📖</span> 2024 BUET Real Questions (40 Solved)
+    <nav class="flex border-b border-slate-800 space-x-1 sm:space-x-3 text-xs sm:text-sm font-medium overflow-x-auto pb-1">
+      <button onclick="switchTab('tracker')" id="tab-tracker" class="tab-btn px-3.5 py-3 border-b-2 border-blue-500 text-blue-400 font-semibold flex items-center gap-1.5 whitespace-nowrap">
+        <span>🗓️</span> Applications & Deadlines
       </button>
-      <button onclick="switchTab('written')" id="tab-written" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-        <span>✍️</span> Technical Written Blueprint (40 Marks)
+      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>📖</span> 2024 BUET Questions (40 Solved)
       </button>
-      <button onclick="switchTab('deadlines')" id="tab-deadlines" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-        <span>🗓️</span> Dates, SMS & Vacancies
+      <button onclick="switchTab('written')" id="tab-written" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>✍️</span> Technical Written (40 Marks)
       </button>
-      <button onclick="switchTab('syllabus')" id="tab-syllabus" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-        <span>🎯</span> Syllabus Checklist & Habit Tracker
+      <button onclick="switchTab('patterns')" id="tab-patterns" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>⚖️</span> BUET vs. IBA Pattern
       </button>
-      <button onclick="switchTab('github')" id="tab-github" class="tab-btn px-4 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2 whitespace-nowrap">
-        <span>🚀</span> Publish on GitHub Pages
+      <button onclick="switchTab('syllabus')" id="tab-syllabus" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>🎯</span> Syllabus & Habit Tracker
+      </button>
+      <button onclick="switchTab('books')" id="tab-books" class="tab-btn px-3.5 py-3 border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-1.5 whitespace-nowrap">
+        <span>📚</span> Books & Free Online Hub
       </button>
     </nav>
 
-    <!-- ==================== TAB 1: 2024 BUET QUESTION BANK (40 SOLVED) ==================== -->
-    <section id="pane-questions" class="space-y-6">
+    <!-- ==================== TAB 1: APPLICATIONS & DEADLINES ==================== -->
+    <section id="pane-tracker" class="space-y-6">
+
+      <!-- Petrobangla Target Card -->
+      <div class="bg-[#0f172a] border border-blue-500/30 rounded-2xl p-6 shadow-md relative overflow-hidden">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2 mb-1.5">
+              <span class="badge-tag bg-blue-600/20 text-blue-400 border border-blue-500/30">Primary Target</span>
+              <span class="text-xs text-slate-400">Circular Memo: 28.02.0000.011.26.0027.26.453</span>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-white">Petrobangla — Assistant Manager (CSE / IT)</h2>
+            <p class="text-xs text-slate-400 mt-1">9th Grade • 25 Vacancies distributed across TGTDCL, SGFL, GTCL, BGDCL, PGCL, BAPEX, BGFCL, JGTDSL</p>
+          </div>
+          <div class="flex gap-2">
+            <a href="http://bogmc.teletalk.com.bd" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold transition">Open Application Portal &rarr;</a>
+            <a href="https://petrobangla.org.bd" target="_blank" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-semibold transition border border-slate-700">Official Notices</a>
+          </div>
+        </div>
+
+        <!-- 4 Milestones -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-5">
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-[11px] font-medium text-slate-400">1. Application Opens</div>
+            <div class="text-sm font-bold text-white mt-0.5">19 Oct 2026</div>
+            <div class="text-xs text-emerald-400 font-medium">10:00 AM (Online)</div>
+            <div class="text-[11px] text-slate-400 mt-1">bogmc.teletalk.com.bd</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-[11px] font-medium text-slate-400">2. Application Deadline</div>
+            <div class="text-sm font-bold text-amber-400 mt-0.5">17 Nov 2026</div>
+            <div class="text-xs text-amber-300 font-medium">05:00 PM Sharp</div>
+            <div class="text-[11px] text-slate-400 mt-1">Strict deadline cutoff</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-[11px] font-medium text-slate-400">3. Fee Payment Deadline</div>
+            <div class="text-sm font-bold text-rose-400 mt-0.5">20 Nov 2026</div>
+            <div class="text-xs text-rose-300 font-medium">05:00 PM (72 Hours)</div>
+            <div class="text-[11px] text-slate-400 mt-1">223 BDT (Teletalk SMS)</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-[11px] font-medium text-slate-400">4. Exam & Admit Stage</div>
+            <div class="text-sm font-bold text-cyan-400 mt-0.5">Expected Dec '26 / Jan '27</div>
+            <div class="text-xs text-cyan-300 font-medium">Notified via SMS</div>
+            <div class="text-[11px] text-slate-400 mt-1">Keep registered SIM active</div>
+          </div>
+        </div>
+
+        <!-- Checklist & Vacancy Split (Side-by-side) -->
+        <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs">
+          <!-- Step-by-step readiness checklist -->
+          <div>
+            <h3 class="text-sm font-bold text-white mb-2.5 flex items-center gap-1.5">
+              <span>✅</span> Application Readiness Checklist
+            </h3>
+            <div class="space-y-2" id="app-checklist">
+              <label class="flex items-center gap-2 p-2 rounded bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:bg-slate-800/50">
+                <input type="checkbox" onchange="saveAppChecklist()" data-key="chk-photo" class="rounded border-slate-700 text-blue-600 focus:ring-0">
+                <span>Recent colored photo scanned (300 × 300 px, JPG, max 100 KB)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:bg-slate-800/50">
+                <input type="checkbox" onchange="saveAppChecklist()" data-key="chk-sig" class="rounded border-slate-700 text-blue-600 focus:ring-0">
+                <span>Signature scanned on white paper (300 × 80 px, JPG, max 60 KB)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:bg-slate-800/50">
+                <input type="checkbox" onchange="saveAppChecklist()" data-key="chk-teletalk" class="rounded border-slate-700 text-blue-600 focus:ring-0">
+                <span>Teletalk Pre-paid SIM ready with at least 250 BDT balance</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:bg-slate-800/50">
+                <input type="checkbox" onchange="saveAppChecklist()" data-key="chk-nid" class="rounded border-slate-700 text-blue-600 focus:ring-0">
+                <span>NID & Academic transcripts (IUBAT B.Sc CSE & JU M.Sc) handy</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:bg-slate-800/50">
+                <input type="checkbox" onchange="saveAppChecklist()" data-key="chk-onepost" class="rounded border-slate-700 text-blue-600 focus:ring-0">
+                <span class="text-amber-300 font-semibold">Verified: Applying to CSE/IT only (Condition 18 cancels all if multi-applied)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Teletalk SMS Cheat Sheet -->
+          <div class="bg-black/40 border border-slate-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+            <div>
+              <div class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Teletalk SMS Format Cheat Sheet</div>
+              <div class="space-y-2 font-mono text-[11px]">
+                <div class="p-2 bg-slate-900/70 rounded border border-slate-800">
+                  <div class="text-slate-400">// 1st SMS (After submitting form):</div>
+                  <div class="text-emerald-400 font-bold">BOGMC &lt;User ID&gt; &rarr; send to 16222</div>
+                  <div class="text-slate-400 text-[10px] mt-0.5">// Reply provides your name and PIN</div>
+                </div>
+                <div class="p-2 bg-slate-900/70 rounded border border-slate-800">
+                  <div class="text-slate-400">// 2nd SMS (To pay 223 BDT fee):</div>
+                  <div class="text-emerald-400 font-bold">BOGMC YES &lt;PIN&gt; &rarr; send to 16222</div>
+                  <div class="text-slate-400 text-[10px] mt-0.5">// Reply contains User ID & Password for admit card</div>
+                </div>
+              </div>
+            </div>
+            <div class="text-[11px] text-slate-400 bg-slate-900/50 p-2 rounded">
+              💡 <strong>Helpline:</strong> If you face any issues with Teletalk, call <strong>121</strong> from Teletalk or email <code>vas.query@teletalk.com.bd</code>.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 Subsidiaries Vacancy Grid -->
+        <div class="mt-5 pt-4 border-t border-slate-800">
+          <div class="text-xs font-bold text-slate-300 mb-2.5">Distribution of 25 Assistant Manager (CSE/IT) Posts:</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>তিতাস গ্যাস (TGTDCL)</span>
+              <strong class="text-emerald-400">12</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>সিলেট গ্যাস (SGFL)</span>
+              <strong class="text-blue-400">04</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>গ্যাস ট্রান্সমিশন (GTCL)</span>
+              <strong class="text-slate-300">02</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>বাখরাবাদ গ্যাস (BGDCL)</span>
+              <strong class="text-slate-300">02</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>পশ্চিমাঞ্চল গ্যাস (PGCL)</span>
+              <strong class="text-slate-300">02</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>বাপেক্স (BAPEX)</span>
+              <strong class="text-slate-300">01</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>বাংলাদেশ গ্যাস (BGFCL)</span>
+              <strong class="text-slate-300">01</strong>
+            </div>
+            <div class="p-2 bg-slate-900/70 rounded border border-slate-800 flex justify-between">
+              <span>জালালাবাদ গ্যাস (JGTDSL)</span>
+              <strong class="text-slate-300">01</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Tracked Govt & Autonomous Jobs (Customizable) -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <h3 class="text-base font-bold text-white">Other Tracked Govt & Autonomous Jobs</h3>
+            <p class="text-xs text-slate-400">Track and manage other recruitment applications in one place (saved in localStorage)</p>
+          </div>
+          <button onclick="openAddJobModal()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg text-xs font-semibold transition">
+            + Track New Job
+          </button>
+        </div>
+
+        <div id="custom-jobs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Populated from JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 2: 2024 BUET QUESTION BANK (40 SOLVED) ==================== -->
+    <section id="pane-questions" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
           <div>
@@ -126,7 +298,7 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 2: TECHNICAL WRITTEN BLUEPRINT ==================== -->
+    <!-- ==================== TAB 3: TECHNICAL WRITTEN BLUEPRINT ==================== -->
     <section id="pane-written" class="space-y-6 hidden">
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-6">
         <div>
@@ -219,101 +391,67 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 3: DATES, SMS & VACANCIES ==================== -->
-    <section id="pane-deadlines" class="space-y-6 hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- ==================== TAB 4: BUET VS. IBA PATTERN ==================== -->
+    <section id="pane-patterns" class="space-y-6 hidden">
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-white">Exam Conductor Pattern: BUET vs. IBA</h2>
+          <p class="text-xs text-slate-400">For technical jobs like Petrobangla AM (CSE/IT), Power companies (DESCO, DPDC, PGCB), recruitment exams are usually assigned to BUET or IBA.</p>
+        </div>
 
-        <!-- Vacancy Breakdown Card -->
-        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="text-base font-bold text-white">Assistant Manager (CSE / IT) Vacancies</h3>
-            <span class="badge-tag bg-blue-500/20 text-blue-400">Total: 25 Posts</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- BUET Pattern -->
+          <div class="p-5 rounded-xl bg-slate-900/80 border border-indigo-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-white text-base">BUET Pattern (Most Common for Engr.)</h3>
+              <span class="text-xs px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-medium">Technical Heavy</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              BUET exams are typically **Written or MCQ + Written**. They emphasize core mathematical problem-solving in CSE subjects rather than generic trivia.
+            </p>
+            <div class="text-xs space-y-2 text-slate-300 pt-2 border-t border-slate-800">
+              <div class="font-semibold text-slate-200">What they ask in Written:</div>
+              <ul class="list-disc list-inside space-y-1 text-slate-400">
+                <li><strong class="text-slate-200">SQL Queries:</strong> "Find the 2nd highest salary", "Retrieve employees working in more than 2 projects using JOIN".</li>
+                <li><strong class="text-slate-200">Subnetting:</strong> Given an IP <code class="text-indigo-300">192.168.10.0/26</code>, calculate network address, broadcast address, and assign valid subnets for 3 departments.</li>
+                <li><strong class="text-slate-200">Algorithms:</strong> Trace Dijkstra's shortest path on a given graph or trace QuickSort partition steps.</li>
+                <li><strong class="text-slate-200">OS Scheduling:</strong> Calculate Average Waiting Time and Turnaround Time for Round Robin (Quantum=2) or SJF.</li>
+                <li><strong class="text-slate-200">Code Output / Error tracing:</strong> Pointer tracing in C/C++ or Inheritance override in Java.</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="space-y-2 text-xs">
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">তিতাস গ্যাস ট্রান্সমিশন (TGTDCL)</span>
-              <span class="font-bold text-emerald-400 text-sm">12 Posts</span>
+          <!-- IBA Pattern -->
+          <div class="p-5 rounded-xl bg-slate-900/80 border border-amber-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-white text-base">IBA Pattern (Speed & Aptitude)</h3>
+              <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-medium">Aptitude Heavy</span>
             </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">সিলেট গ্যাস ফিল্ডস (SGFL)</span>
-              <span class="font-bold text-blue-400 text-sm">04 Posts</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">গ্যাস ট্রান্সমিশন কোম্পানি (GTCL)</span>
-              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">বাখরাবাদ গ্যাস ডিস্ট্রিবিউশন (BGDCL)</span>
-              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">পশ্চিমাঞ্চল গ্যাস কোম্পানি (PGCL)</span>
-              <span class="font-bold text-slate-200 text-sm">02 Posts</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">বাংলাদেশ গ্যাস ফিল্ডস (BGFCL)</span>
-              <span class="font-bold text-slate-200 text-sm">01 Post</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">বাপেক্স (BAPEX)</span>
-              <span class="font-bold text-slate-200 text-sm">01 Post</span>
-            </div>
-            <div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-lg border border-slate-800">
-              <span class="font-medium text-slate-200">জালালাবাদ গ্যাস ডিস্ট্রিবিউশন (JGTDSL)</span>
-              <span class="font-bold text-slate-200 text-sm">01 Post</span>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              If IBA conducts the exam, non-departmental questions will be fast-paced and challenging, especially Quantitative Math and Critical English.
+            </p>
+            <div class="text-xs space-y-2 text-slate-300 pt-2 border-t border-slate-800">
+              <div class="font-semibold text-slate-200">What they ask in IBA:</div>
+              <ul class="list-disc list-inside space-y-1 text-slate-400">
+                <li><strong class="text-slate-200">Advanced Math:</strong> Speed-Time-Distance with relative speeds, Permutations/Combinations, and Data Sufficiency questions.</li>
+                <li><strong class="text-slate-200">Analytical Puzzles:</strong> Seating arrangement logic, condition-based ordering.</li>
+                <li><strong class="text-slate-200">English:</strong> GRE-level sentence completion, Reading Comprehension with inferential questions, Error detection.</li>
+                <li><strong class="text-slate-200">CSE Component:</strong> Conceptual MCQs on Networking, Database normal forms, and Software Engineering models.</li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <!-- Teletalk SMS Cheat Sheet & Official Schedule -->
-        <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h3 class="text-base font-bold text-white">Application Timeline & SMS Format</h3>
-            <span class="badge-tag bg-amber-500/20 text-amber-400">Teletalk SMS: 16222</span>
-          </div>
-
-          <div class="space-y-3 text-xs">
-            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 space-y-1">
-              <div class="flex justify-between font-semibold text-slate-200">
-                <span>Application Opens:</span>
-                <span class="text-emerald-400">19 Oct 2026 (10:00 AM)</span>
-              </div>
-              <div class="flex justify-between font-semibold text-slate-200">
-                <span>Application Closes:</span>
-                <span class="text-rose-400">17 Nov 2026 (05:00 PM)</span>
-              </div>
-              <div class="flex justify-between font-semibold text-slate-200">
-                <span>Fee Deadline:</span>
-                <span class="text-amber-400">20 Nov 2026 (05:00 PM)</span>
-              </div>
-            </div>
-
-            <!-- SMS Commands -->
-            <div class="p-3 bg-black/50 rounded-xl border border-slate-800 font-mono space-y-2">
-              <div class="text-[11px] text-slate-400">// 1st SMS (After form submission):</div>
-              <div class="text-emerald-400 font-bold">BOGMC &lt;User ID&gt; &rarr; 16222</div>
-              <div class="text-[11px] text-slate-400">// 2nd SMS (After receiving PIN):</div>
-              <div class="text-emerald-400 font-bold">BOGMC YES &lt;PIN&gt; &rarr; 16222</div>
-            </div>
-
-            <div class="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-amber-300">
-              <strong>⚠️ Condition 18 Warning:</strong> You must apply for <em>only one post</em>. If an applicant submits applications for more than one post, all submissions will be permanently disqualified.
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- ==================== TAB 4: SYLLABUS CHECKLIST & HABIT TRACKER ==================== -->
+    <!-- ==================== TAB 5: SYLLABUS & HABIT TRACKER ==================== -->
     <section id="pane-syllabus" class="space-y-6 hidden">
-      <!-- Progress Bar -->
+      <!-- Progress Bar Card -->
       <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div>
-            <h2 class="text-xl font-bold text-white">Interactive Syllabus Checklist</h2>
-            <p class="text-xs text-slate-400">State is saved automatically in your browser's localStorage</p>
+            <h2 class="text-xl font-bold text-white">Preparation Syllabus & Habit Tracker</h2>
+            <p class="text-xs text-slate-400">Check off completed topics to update your overall readiness percentage</p>
           </div>
           <div class="text-right">
             <span class="text-3xl font-black text-blue-400" id="study-progress-percent">0%</span>
@@ -325,8 +463,8 @@
         </div>
       </div>
 
-      <!-- Checklist Modules -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs" id="syllabus-checklist-container">
+      <!-- Checklist Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         <!-- Part A: CSE Core -->
         <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-5 space-y-4">
           <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -334,7 +472,7 @@
             <span class="badge-tag bg-blue-500/10 text-blue-400">Weight: 60%</span>
           </div>
 
-          <div class="space-y-2.5 text-slate-300" id="cse-checklist">
+          <div class="space-y-2 text-slate-300">
             <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
               <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-blue-600 focus:ring-0">
               <span>SQL Queries: Joins, Nested Subqueries, GROUP BY, HAVING</span>
@@ -377,7 +515,7 @@
             <span class="badge-tag bg-amber-500/10 text-amber-400">Weight: 40%</span>
           </div>
 
-          <div class="space-y-2.5 text-slate-300" id="non-tech-checklist">
+          <div class="space-y-2 text-slate-300">
             <label class="flex items-center gap-2.5 p-2 rounded bg-slate-900/50 border border-slate-800/80 cursor-pointer hover:bg-slate-800/40">
               <input type="checkbox" onchange="syncCheckboxes()" class="study-cb rounded border-slate-700 text-amber-600 focus:ring-0">
               <span>Math: Logarithms & Exponential Indices equations</span>
@@ -419,53 +557,97 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 5: GITHUB DEPLOYMENT ==================== -->
-    <section id="pane-github" class="space-y-6 hidden">
-      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 shadow-md space-y-6">
+    <!-- ==================== TAB 6: BOOKS & ONLINE HUB ==================== -->
+    <section id="pane-books" class="space-y-6 hidden">
+      <div class="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 space-y-6">
         <div>
-          <span class="badge-tag bg-emerald-500/20 text-emerald-400 mb-2">Free Hosting • 100% Client-Side</span>
-          <h2 class="text-xl font-bold text-white">How to Host This Dashboard Publicly on Your GitHub</h2>
-          <p class="text-xs text-slate-400 mt-1">You asked: <em>"can i publicly publish this dashboard using my github?"</em> Yes! You can host it in less than 3 minutes using <strong>GitHub Pages</strong> at zero cost.</p>
+          <h2 class="text-xl font-bold text-white">Recommended Workbooks & Free Online Study Hub</h2>
+          <p class="text-xs text-slate-400">Curated toolkit of physical guides and free interactive learning websites for your preparation.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <!-- Step 1 -->
-          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
-            <div class="flex items-center justify-between text-blue-400 font-bold">
-              <span>Step 1: Create Repo</span>
-              <span class="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">Web UI</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Physical Workbooks -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span>📖</span> Physical Workbooks (Recommended to Buy 1 or 2)
+            </h3>
+            
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="font-bold text-white">Ideal CSE Job Guide</span> or <span class="font-bold text-white">Smart CSE Job Preparation</span>
+                  <span class="text-slate-400 block text-[11px]">By Shamim / Nilkhet publishers</span>
+                </div>
+                <span class="badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Must Buy (Tech)</span>
+              </div>
+              <p class="text-slate-400">Compiles the past 10 years of BUET, IBA, BPSC CSE question papers with solutions (Petrobangla, BAPEX, DESCO, PGCB, Bank IT).</p>
             </div>
-            <p class="text-slate-300">Go to your GitHub account (<code>github.com/ZebaAfiaShama</code>) and create a new public repository, for example:</p>
-            <div class="p-2 bg-black/40 rounded font-mono text-emerald-400">petrobangla-job-tracker</div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="font-bold text-white">Khairul's Basic Math</span> or <span class="font-bold text-white">Saifur's Math</span>
+                  <span class="text-slate-400 block text-[11px]">Bangla Medium / English Medium Bank Math</span>
+                </div>
+                <span class="badge-tag bg-amber-500/10 text-amber-400 border border-amber-500/20">Crucial (Math)</span>
+              </div>
+              <p class="text-slate-400">Covers short-cut methods and written explanations for standard govt/bank quantitative aptitude problems.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="font-bold text-white">Master English</span> by Md. Jahangir Alam
+                  <span class="text-slate-400 block text-[11px]">Grammar & Vocabulary Compendium</span>
+                </div>
+                <span class="badge-tag bg-blue-500/10 text-blue-400 border border-blue-500/20">Recommended</span>
+              </div>
+              <p class="text-slate-400">Best for sentence correction, idioms, prepositions, and previous competitive exam English MCQs.</p>
+            </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
-            <div class="flex items-center justify-between text-indigo-400 font-bold">
-              <span>Step 2: Upload File</span>
-              <span class="px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">Name it index.html</span>
-            </div>
-            <p class="text-slate-300">Save this dashboard file as <code>index.html</code> inside that repository and commit it to the <code>main</code> branch.</p>
-          </div>
+          <!-- Free Online Study Materials -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <span>🌐</span> Free Online Study Portals (100% Free)
+            </h3>
 
-          <!-- Step 3 -->
-          <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 space-y-2">
-            <div class="flex items-center justify-between text-emerald-400 font-bold">
-              <span>Step 3: Enable Pages</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">One Click</span>
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <a href="https://www.youtube.com/@GateSmashers" target="_blank" class="font-bold text-white hover:text-blue-400 transition">Gate Smashers (YouTube) &rarr;</a>
+                <span class="text-indigo-400 font-mono text-[11px]">Best Video Lecture</span>
+              </div>
+              <p class="text-slate-400">Crystal clear, 10-minute conceptual videos on Operating Systems, DBMS, Networking, and Data Structures.</p>
             </div>
-            <p class="text-slate-300">In your repo &rarr; <strong>Settings</strong> &rarr; <strong>Pages</strong>. Under <em>Build and deployment</em>, set Source: <strong>Deploy from a branch</strong>, Branch: <strong>main / (root)</strong> &rarr; <strong>Save</strong>.</p>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <a href="https://www.sanfoundry.com" target="_blank" class="font-bold text-white hover:text-blue-400 transition">Sanfoundry & GeeksforGeeks &rarr;</a>
+                <span class="text-indigo-400 font-mono text-[11px]">MCQ & Quick Notes</span>
+              </div>
+              <p class="text-slate-400">Hundreds of topic-wise 1000-question sets on Computer Networks, Database Management, and Data Structures.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
+              <div class="flex justify-between items-start">
+                <a href="https://www.indiabix.com" target="_blank" class="font-bold text-white hover:text-blue-400 transition">IndiaBIX / Sawaal &rarr;</a>
+                <span class="text-amber-400 font-mono text-[11px]">Aptitude Practice</span>
+              </div>
+              <p class="text-slate-400">Unbeatable for Quantitative Aptitude, Time-Speed-Distance formulas, and Data Interpretation drills.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Result Box -->
-        <div class="p-4 bg-slate-900/80 rounded-xl border border-blue-500/30 text-xs space-y-2">
-          <div class="font-bold text-white flex items-center gap-2">
-            <span>🎉 Your Live URL will be:</span>
-            <code class="px-2.5 py-1 bg-black/60 rounded text-emerald-400 text-xs">https://zebaafiashama.github.io/petrobangla-job-tracker/</code>
+        <!-- Strategy Box -->
+        <div class="p-4 rounded-xl bg-rose-950/20 border border-rose-500/30 text-xs space-y-2">
+          <div class="font-bold text-rose-300 text-sm flex items-center gap-2">
+            <span>⚠️</span> Strategy Check: "Will only CSE related study help?"
           </div>
-          <p class="text-slate-400">
-            Because this entire dashboard is built with pure Tailwind CSS and vanilla JavaScript, it runs completely client-side without any backend. Your checkboxes and notes will persist in whatever browser you or anyone opens it in!
+          <p class="text-slate-300 leading-relaxed">
+            <strong class="text-rose-200">No, absolutely not.</strong> In almost all Bangladesh government and autonomous enterprise exams (Petrobangla, BPDB, DESCO, Banks):
+            Almost all CSE candidates who graduated from recognized universities will score similarly on standard technical MCQs.
+            The **true elimination factor** is always <strong class="text-amber-300">Quantitative Math</strong> and <strong class="text-blue-300">English</strong>.
+            Dedicate <span class="text-emerald-300 font-semibold">60% of study time to CSE Core</span> and <span class="text-amber-300 font-semibold">40% to Non-Departmental Math + English + Power Sector GK</span>.
           </p>
         </div>
       </div>
@@ -473,7 +655,52 @@
 
   </div>
 
-  <!-- SCRIPT FOR QUESTIONS & LOGIC -->
+  <!-- Modal for Adding a New Govt Job -->
+  <div id="add-job-modal" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-[#0f172a] border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="text-base font-bold text-white">Track Another Government / Bank Job</h3>
+        <button onclick="closeAddJobModal()" class="text-slate-400 hover:text-white text-xl font-bold">&times;</button>
+      </div>
+
+      <form id="add-job-form" onsubmit="handleCreateJob(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-300 font-medium mb-1">Organization & Post Name</label>
+          <input type="text" id="job-title" required placeholder="e.g. Bangladesh Bank - Assistant Director / DESCO Assistant Engineer" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-medium mb-1">Application Deadline</label>
+            <input type="date" id="job-deadline" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-medium mb-1">Application Fee (BDT)</label>
+            <input type="number" id="job-fee" placeholder="e.g. 200 or 1000" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-300 font-medium mb-1">Application / Notice URL</label>
+          <input type="url" id="job-url" placeholder="https://..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-slate-300 font-medium mb-1">Current Status</label>
+          <select id="job-status" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+            <option value="Not Applied">Not Applied Yet</option>
+            <option value="Applied - Fee Unpaid">Applied - Fee Pending</option>
+            <option value="Fee Paid">Fee Paid</option>
+            <option value="Admit Card Available">Admit Card Available</option>
+            <option value="Exam Completed">Exam Completed</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
+          <button type="button" onclick="closeAddJobModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500">Save Job</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR COMPLETE APPLICATION -->
   <script>
     // 40 BUET PETROBANGLA 2024 QUESTIONS DATA
     const QUESTIONS_DATA = [
@@ -574,19 +801,21 @@
       renderQuestions(cat);
     }
 
-    // Tabs
+    // Tab Navigation
     function switchTab(id) {
-      ['questions', 'written', 'deadlines', 'syllabus', 'github'].forEach(tabId => {
+      ['tracker', 'questions', 'written', 'patterns', 'syllabus', 'books'].forEach(tabId => {
         const pane = document.getElementById('pane-' + tabId);
         const tabBtn = document.getElementById('tab-' + tabId);
-        if (tabId === id) {
-          pane.classList.remove('hidden');
-          tabBtn.classList.add('border-blue-500', 'text-blue-400', 'font-semibold');
-          tabBtn.classList.remove('border-transparent', 'text-slate-400');
-        } else {
-          pane.classList.add('hidden');
-          tabBtn.classList.remove('border-blue-500', 'text-blue-400', 'font-semibold');
-          tabBtn.classList.add('border-transparent', 'text-slate-400');
+        if (pane && tabBtn) {
+          if (tabId === id) {
+            pane.classList.remove('hidden');
+            tabBtn.classList.add('border-blue-500', 'text-blue-400', 'font-semibold');
+            tabBtn.classList.remove('border-transparent', 'text-slate-400');
+          } else {
+            pane.classList.add('hidden');
+            tabBtn.classList.remove('border-blue-500', 'text-blue-400', 'font-semibold');
+            tabBtn.classList.add('border-transparent', 'text-slate-400');
+          }
         }
       });
     }
@@ -600,6 +829,8 @@
       const labelEl = document.getElementById('countdown-label');
       const timerEl = document.getElementById('countdown-timer');
 
+      if (!labelEl || !timerEl) return;
+
       if (now < openDate) {
         const diff = openDate - now;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -612,7 +843,7 @@
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         labelEl.innerText = "Application Live! Closes In:";
         timerEl.innerText = `${days}d ${hours}h`;
-        timerEl.className = "text-2xl md:text-3xl font-black text-emerald-400 tracking-tight mt-1";
+        timerEl.className = "text-xl md:text-2xl font-black text-emerald-400 tracking-tight mt-0.5";
       } else {
         labelEl.innerText = "Application Window";
         timerEl.innerText = "Closed";
@@ -632,9 +863,12 @@
 
       const total = cbs.length;
       const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
-      document.getElementById('study-progress-percent').innerText = `${pct}%`;
-      document.getElementById('study-progress-count').innerText = `${checked} of ${total} topics done`;
-      document.getElementById('study-progress-bar').style.width = `${pct}%`;
+      const pctEl = document.getElementById('study-progress-percent');
+      const countEl = document.getElementById('study-progress-count');
+      const barEl = document.getElementById('study-progress-bar');
+      if (pctEl) pctEl.innerText = `${pct}%`;
+      if (countEl) countEl.innerText = `${checked} of ${total} topics done`;
+      if (barEl) barEl.style.width = `${pct}%`;
     }
 
     function loadSyllabusState() {
@@ -649,12 +883,152 @@
       syncCheckboxes();
     }
 
-    // Init
+    // Application Checklist LocalStorage
+    function saveAppChecklist() {
+      const items = document.querySelectorAll('#app-checklist input[type="checkbox"]');
+      const state = {};
+      items.forEach(item => {
+        state[item.getAttribute('data-key')] = item.checked;
+      });
+      localStorage.setItem('petro_app_checklist', JSON.stringify(state));
+    }
+
+    function loadAppChecklist() {
+      const saved = localStorage.getItem('petro_app_checklist');
+      if (saved) {
+        const state = JSON.parse(saved);
+        Object.keys(state).forEach(key => {
+          const el = document.querySelector(`input[data-key="${key}"]`);
+          if (el) el.checked = state[key];
+        });
+      }
+    }
+
+    // Custom Job Tracker Management (localStorage)
+    const DEFAULT_JOBS = [
+      {
+        id: 'job-1',
+        title: 'Bangladesh Bank — Assistant Director (General/IT)',
+        deadline: '2026-11-30',
+        fee: 200,
+        url: 'https://erecruitment.bb.org.bd',
+        status: 'Not Applied'
+      },
+      {
+        id: 'job-2',
+        title: 'DESCO — Assistant Engineer (ICT)',
+        deadline: '2026-12-15',
+        fee: 1000,
+        url: 'https://desco.org.bd',
+        status: 'Not Applied'
+      },
+      {
+        id: 'job-3',
+        title: 'Combined 8 Banks — Senior Officer (IT)',
+        deadline: '2026-12-30',
+        fee: 200,
+        url: 'https://erecruitment.bb.org.bd',
+        status: 'Not Applied'
+      }
+    ];
+
+    function getCustomJobs() {
+      const raw = localStorage.getItem('tracked_custom_jobs');
+      return raw ? JSON.parse(raw) : DEFAULT_JOBS;
+    }
+
+    function saveCustomJobs(jobs) {
+      localStorage.setItem('tracked_custom_jobs', JSON.stringify(jobs));
+      renderCustomJobs();
+    }
+
+    function renderCustomJobs() {
+      const container = document.getElementById('custom-jobs-grid');
+      if (!container) return;
+      const jobs = getCustomJobs();
+
+      if (jobs.length === 0) {
+        container.innerHTML = `<div class="col-span-3 text-center p-8 bg-slate-900/40 rounded-xl border border-slate-800 text-xs text-slate-500">No extra jobs tracked. Click "Add Another Job" to monitor other applications!</div>`;
+        return;
+      }
+
+      container.innerHTML = jobs.map(job => `
+        <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-semibold ${
+                job.status === 'Fee Paid' ? 'bg-emerald-500/20 text-emerald-400' :
+                job.status === 'Applied - Fee Unpaid' ? 'bg-amber-500/20 text-amber-400' :
+                job.status === 'Admit Card Available' ? 'bg-cyan-500/20 text-cyan-400' :
+                'bg-slate-800 text-slate-300'
+              }">${job.status}</span>
+              <button onclick="deleteJob('${job.id}')" class="text-slate-500 hover:text-rose-400 text-sm font-bold">&times;</button>
+            </div>
+            <h4 class="font-bold text-white text-sm leading-snug">${job.title}</h4>
+            <div class="text-xs text-slate-400 mt-2 space-y-1">
+              <div>Deadline: <strong class="text-slate-200">${job.deadline}</strong></div>
+              <div>Fee: <strong class="text-slate-200">${job.fee ? job.fee + ' BDT' : 'N/A'}</strong></div>
+            </div>
+          </div>
+          <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+            <select onchange="updateJobStatus('${job.id}', this.value)" class="bg-black/50 border border-slate-700 text-slate-300 rounded px-2 py-1 text-[11px] focus:outline-none">
+              <option value="Not Applied" ${job.status === 'Not Applied' ? 'selected' : ''}>Not Applied</option>
+              <option value="Applied - Fee Unpaid" ${job.status === 'Applied - Fee Unpaid' ? 'selected' : ''}>Fee Unpaid</option>
+              <option value="Fee Paid" ${job.status === 'Fee Paid' ? 'selected' : ''}>Fee Paid</option>
+              <option value="Admit Card Available" ${job.status === 'Admit Card Available' ? 'selected' : ''}>Admit Card</option>
+              <option value="Exam Completed" ${job.status === 'Exam Completed' ? 'selected' : ''}>Exam Done</option>
+            </select>
+            ${job.url ? `<a href="${job.url}" target="_blank" class="text-blue-400 hover:underline text-[11px]">Portal &rarr;</a>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openAddJobModal() { document.getElementById('add-job-modal').classList.remove('hidden'); }
+    function closeAddJobModal() { document.getElementById('add-job-modal').classList.add('hidden'); }
+
+    function handleCreateJob(e) {
+      e.preventDefault();
+      const title = document.getElementById('job-title').value;
+      const deadline = document.getElementById('job-deadline').value;
+      const fee = document.getElementById('job-fee').value;
+      const url = document.getElementById('job-url').value;
+      const status = document.getElementById('job-status').value;
+
+      const jobs = getCustomJobs();
+      jobs.push({
+        id: 'job-' + Date.now(),
+        title, deadline, fee, url, status
+      });
+      saveCustomJobs(jobs);
+      closeAddJobModal();
+      document.getElementById('add-job-form').reset();
+    }
+
+    function updateJobStatus(id, newStatus) {
+      const jobs = getCustomJobs();
+      const target = jobs.find(j => j.id === id);
+      if (target) {
+        target.status = newStatus;
+        saveCustomJobs(jobs);
+      }
+    }
+
+    function deleteJob(id) {
+      if (confirm('Remove this job from tracker?')) {
+        const jobs = getCustomJobs().filter(j => j.id !== id);
+        saveCustomJobs(jobs);
+      }
+    }
+
+    // Init All on DOM Ready
     window.addEventListener('DOMContentLoaded', () => {
       renderQuestions('all');
       updateCountdown();
       setInterval(updateCountdown, 60000);
+      loadAppChecklist();
       loadSyllabusState();
+      renderCustomJobs();
     });
   </script>
 </body>
