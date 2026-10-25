@@ -1082,7 +1082,7 @@
                 </div>
                 <span class="badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Must Buy (Tech)</span>
               </div>
-              <p class="text-slate-400">Compiles the past 10 years of BUET, IBA, BPSC CSE question papers with solutions (Petrobangla, BAPEX, DESCO, PGCB, Bank IT).</p>
+              <p class="text-slate-400">Compiles the past 10 years of BUET, IBA, BPSC CSE question papers with solutions (Petrobangla, BAPEX, DESCO, PGCB, BCIC, BCC).</p>
             </div>
 
             <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
@@ -1093,7 +1093,7 @@
                 </div>
                 <span class="badge-tag bg-amber-500/10 text-amber-400 border border-amber-500/20">Crucial (Math)</span>
               </div>
-              <p class="text-slate-400">Covers short-cut methods and written explanations for standard govt/bank quantitative aptitude problems.</p>
+              <p class="text-slate-400">Covers short-cut methods and written explanations for standard govt & autonomous enterprise quantitative aptitude problems.</p>
             </div>
 
             <div class="p-3.5 bg-slate-900/60 rounded-xl border border-slate-800 text-xs space-y-2">
@@ -1157,10 +1157,10 @@
             <span>⚠️</span> Strategy Check: "Will only CSE related study help?"
           </div>
           <p class="text-slate-300 leading-relaxed">
-            <strong class="text-rose-200">No, absolutely not.</strong> In almost all Bangladesh government and autonomous enterprise exams (Petrobangla, BPDB, DESCO, Banks):
+            <strong class="text-rose-200">No, absolutely not.</strong> In almost all Bangladesh government and autonomous enterprise exams (Petrobangla, BCC, BCIC, BPDB, DESCO, PGCB):
             Almost all CSE candidates who graduated from recognized universities will score similarly on standard technical MCQs.
             The **true elimination factor** is always <strong class="text-amber-300">Quantitative Math</strong> and <strong class="text-blue-300">English</strong>.
-            Dedicate <span class="text-emerald-300 font-semibold">60% of study time to CSE Core</span> and <span class="text-amber-300 font-semibold">40% to Non-Departmental Math + English + Power Sector GK</span>.
+            Dedicate <span class="text-emerald-300 font-semibold">60% of study time to CSE Core</span> and <span class="text-amber-300 font-semibold">40% to Non-Departmental Math + English + Energy/Govt GK</span>.
           </p>
         </div>
       </div>
@@ -1172,14 +1172,14 @@
   <div id="add-job-modal" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
     <div class="bg-[#0f172a] border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
       <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-        <h3 class="text-base font-bold text-white">Track Another Government / Bank Job</h3>
+        <h3 class="text-base font-bold text-white">Track Another Government / Autonomous Job</h3>
         <button onclick="closeAddJobModal()" class="text-slate-400 hover:text-white text-xl font-bold">&times;</button>
       </div>
 
       <form id="add-job-form" onsubmit="handleCreateJob(event)" class="space-y-3 text-xs">
         <div>
           <label class="block text-slate-300 font-medium mb-1">Organization & Post Name</label>
-          <input type="text" id="job-title" required placeholder="e.g. Bangladesh Bank - Assistant Director / DESCO Assistant Engineer" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
+          <input type="text" id="job-title" required placeholder="e.g. DESCO Assistant Engineer / DPDC Assistant Engineer / PGCB" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-blue-500">
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
@@ -1655,14 +1655,6 @@
     const DEFAULT_JOBS = [
       {
         id: 'job-1',
-        title: 'Bangladesh Bank — Assistant Director (General/IT)',
-        deadline: '2026-11-30',
-        fee: 200,
-        url: 'https://erecruitment.bb.org.bd',
-        status: 'Not Applied'
-      },
-      {
-        id: 'job-2',
         title: 'DESCO — Assistant Engineer (ICT)',
         deadline: '2026-12-15',
         fee: 1000,
@@ -1670,18 +1662,34 @@
         status: 'Not Applied'
       },
       {
-        id: 'job-3',
-        title: 'Combined 8 Banks — Senior Officer (IT)',
+        id: 'job-2',
+        title: 'DPDC — Assistant Engineer (ICT/Computer)',
         deadline: '2026-12-30',
-        fee: 200,
-        url: 'https://erecruitment.bb.org.bd',
+        fee: 1000,
+        url: 'https://dpdc.org.bd',
+        status: 'Not Applied'
+      },
+      {
+        id: 'job-3',
+        title: 'PGCB (Power Grid) — Assistant Engineer (ICT)',
+        deadline: '2027-01-15',
+        fee: 1000,
+        url: 'https://pgcb.gov.bd',
         status: 'Not Applied'
       }
     ];
 
     function getCustomJobs() {
       const raw = localStorage.getItem('tracked_custom_jobs');
-      return raw ? JSON.parse(raw) : DEFAULT_JOBS;
+      if (!raw) return DEFAULT_JOBS;
+      try {
+        const parsed = JSON.parse(raw);
+        // Automatically exclude any bank-related jobs
+        const filtered = parsed.filter(j => !j.title.toLowerCase().includes('bank'));
+        return filtered.length > 0 ? filtered : DEFAULT_JOBS;
+      } catch (e) {
+        return DEFAULT_JOBS;
+      }
     }
 
     function saveCustomJobs(jobs) {
